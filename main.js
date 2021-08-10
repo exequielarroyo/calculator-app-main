@@ -40,7 +40,7 @@ class Calculator {
             case '-':
                 result = previous - current;
                 break;
-            case '*':
+            case 'x':
                 result = previous * current;
                 break;
             case '/':
