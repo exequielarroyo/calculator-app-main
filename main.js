@@ -141,7 +141,7 @@ radioBtns.forEach(radio => {
 setTheme(localStorage.getItem('theme'));
 
 function setTheme(number) {
-    document.body.classList.remove('theme-1');
+    document.body.classList.remove('theme-null');
     document.body.classList.remove('theme-2');
     document.body.classList.remove('theme-3');
 
