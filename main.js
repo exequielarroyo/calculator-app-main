@@ -148,6 +148,6 @@ function setTheme(number) {
     document.body.classList.add(`theme-${number}`);
     localStorage.setItem('theme', number);
 
+    if (isNaN(number)) { radioBtns[0].checked = true; return }
     radioBtns[number - 1].checked = true;
-    if (number == null) radioBtns[2].checked; return
 }
