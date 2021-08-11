@@ -149,4 +149,5 @@ function setTheme(number) {
     localStorage.setItem('theme', number);
 
     radioBtns[number - 1].checked = true;
+    if (number == null) radioBtns[2].checked; return
 }
