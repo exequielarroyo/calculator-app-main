@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
-:root {
+.theme-1 {
     --font-family: Spartan;
     --font-weight: 700;
     /* theme 1 */
@@ -95,6 +95,67 @@ header {
     justify-content: space-between;
     margin-bottom: 35px;
 }
+
+/* toggle */
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch-title {
+    margin-right: 20px;
+    font-size: .8rem;
+}
+
+.switch {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.labels {
+    font-size: .8rem;
+    display: flex;
+    width: 70px;
+    margin-bottom: 4px;
+    justify-content: space-around;
+}
+
+.radio-btns {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--toggle--keypadbackground);
+    border-radius: 16px;
+}
+
+.radio-btn label{
+    display: flex;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.checkmark {
+    align-self: center;
+    margin: 4px 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--key-background-toggle-red);
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input:checked+.checkmark {
+    opacity: 1;
+    display: inline-block;
+}
+
+/* calculator output */
 
 .calc-output {
     background-color: var(--screen-background);
