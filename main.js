@@ -62,7 +62,7 @@ class Calculator {
         if (isNaN(integerDigits)) {
             integerDisplay = '0'
         } else {
-            integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
         }
 
         if (decimanDigits != null) {
@@ -130,3 +130,23 @@ deleteBtn.addEventListener('click', e => {
 });
 
 calcOutput.innerText = '0';
+
+const radioBtns = document.querySelectorAll('input[type="radio"]');
+radioBtns.forEach(radio => {
+    radio.addEventListener('click', e => {
+        setTheme(radio.value);
+    });
+});
+
+setTheme(localStorage.getItem('theme'));
+
+function setTheme(number) {
+    document.body.classList.remove('theme-1');
+    document.body.classList.remove('theme-2');
+    document.body.classList.remove('theme-3');
+
+    document.body.classList.add(`theme-${number}`);
+    localStorage.setItem('theme', number);
+
+    radioBtns[number - 1].checked = true;
+}
