@@ -152,7 +152,7 @@ labels.forEach(label => {
                 setTheme(label.innerText);
                 break;
         }
-        themeToggle.value = label.innerText;
+        
     });
 });
 
@@ -181,7 +181,7 @@ function setTheme(number) {
     // checkmark.classList.add(`position-${number}`);
     document.body.classList.add(`theme-${number}`);
     localStorage.setItem('theme', number);
-
+    themeToggle.value = number;
     // if (isNaN(number)) { radioBtns[0].checked = true; return }
     // radioBtns[number - 1].checked = true;
 }
