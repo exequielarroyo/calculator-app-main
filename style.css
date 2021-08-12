@@ -97,7 +97,6 @@ header {
 }
 
 /* toggle */
-
 .toggle-container {
     display: flex;
     align-items: flex-end;
@@ -105,7 +104,7 @@ header {
 
 .switch-title {
     margin-right: 20px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
     font-size: 0.8rem;
 }
 
@@ -113,63 +112,33 @@ header {
     width: 70px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .labels {
     font-size: 0.8rem;
     display: flex;
     width: 70px;
+    padding-left: 2px;
     margin-bottom: 4px;
     justify-content: space-around;
 }
 
-.radio-btns {
-    display: flex;
-    justify-content: space-around;
+#theme-toggle {
+    appearance: none;
+    width: 70px;
+    padding: 4px;
+    border-radius: 20px;
     background-color: var(--toggle--keypadbackground);
-    border-radius: 16px;
 }
 
-.radio-btn label {
-    display: flex;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-.checkmark {
-    align-self: center;
-    margin: 4px 0;
-    width: 15px;
-    height: 15px;
-    background-color: var(--key-background-toggle-red);
+input[type="range"]::-webkit-slider-thumb {
+    background: var(--key-background-toggle-red);
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    display: inline-block;
-    /* opacity: 0; */
-    transition: all 0.3s ease;
+    appearance: none;
 }
-
-.checkmark.position-2 {
-    transform: translateX(calc(150%));
-}
-
-.checkmark.position-3 {
-    transform: translateX(calc(310%));
-}
-
-input:checked + .checkmark {
-    opacity: 1;
-    display: inline-block;
-}
-
-.checkmarked{
-    width: 15px;
-    height: 15px;
-    /* background-color: dimgray; */
-}
-
 /* calculator output */
 
 .calc-output {

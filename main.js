@@ -131,12 +131,40 @@ deleteBtn.addEventListener('click', e => {
 
 calcOutput.innerText = '0';
 
+const themeToggle = document.getElementById('theme-toggle');
 const radioBtns = document.querySelectorAll('input[type="radio"]');
 const checkmark = document.querySelector('.checkmark');
 radioBtns.forEach(radio => {
     radio.addEventListener('click', e => {
         setTheme(radio.value);
     });
+});
+
+const labels = document.querySelectorAll('label');
+
+labels.forEach(label => {
+    label.addEventListener('click', e =>{
+        switch (label.innerText) {
+            case '1':
+                setTheme(null);
+                break;
+            default:
+                setTheme(label.innerText);
+                break;
+        }
+        themeToggle.value = label.innerText;
+    });
+});
+
+themeToggle.addEventListener('input', e => {
+    switch (themeToggle.value) {
+        case '1':
+            setTheme(null);
+            break;
+        default:
+            setTheme(themeToggle.value);
+            break;
+    }
 });
 
 setTheme(localStorage.getItem('theme'));
@@ -146,14 +174,14 @@ function setTheme(number) {
     document.body.classList.remove('theme-2');
     document.body.classList.remove('theme-3');
 
-    checkmark.classList.remove('position-null');
-    checkmark.classList.remove('position-2');
-    checkmark.classList.remove('position-3');
+    // checkmark.classList.remove('position-null');
+    // checkmark.classList.remove('position-2');
+    // checkmark.classList.remove('position-3');
 
-    checkmark.classList.add(`position-${number}`);
+    // checkmark.classList.add(`position-${number}`);
     document.body.classList.add(`theme-${number}`);
     localStorage.setItem('theme', number);
 
-    if (isNaN(number)) { radioBtns[0].checked = true; return }
-    radioBtns[number - 1].checked = true;
+    // if (isNaN(number)) { radioBtns[0].checked = true; return }
+    // radioBtns[number - 1].checked = true;
 }
