@@ -132,6 +132,7 @@ deleteBtn.addEventListener('click', e => {
 calcOutput.innerText = '0';
 
 const radioBtns = document.querySelectorAll('input[type="radio"]');
+const checkmark = document.querySelector('.checkmark');
 radioBtns.forEach(radio => {
     radio.addEventListener('click', e => {
         setTheme(radio.value);
@@ -145,6 +146,11 @@ function setTheme(number) {
     document.body.classList.remove('theme-2');
     document.body.classList.remove('theme-3');
 
+    checkmark.classList.remove('position-null');
+    checkmark.classList.remove('position-2');
+    checkmark.classList.remove('position-3');
+
+    checkmark.classList.add(`position-${number}`);
     document.body.classList.add(`theme-${number}`);
     localStorage.setItem('theme', number);
 

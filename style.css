@@ -100,11 +100,12 @@ header {
 
 .toggle-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .switch-title {
     margin-right: 20px;
+    margin-bottom: 3px;
     font-size: 0.8rem;
 }
 
@@ -146,13 +147,27 @@ input[type="radio"] {
     background-color: var(--key-background-toggle-red);
     border-radius: 50%;
     display: inline-block;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    /* opacity: 0; */
+    transition: all 0.3s ease;
+}
+
+.checkmark.position-2 {
+    transform: translateX(calc(150%));
+}
+
+.checkmark.position-3 {
+    transform: translateX(calc(310%));
 }
 
 input:checked + .checkmark {
     opacity: 1;
     display: inline-block;
+}
+
+.checkmarked{
+    width: 15px;
+    height: 15px;
+    /* background-color: dimgray; */
 }
 
 /* calculator output */
