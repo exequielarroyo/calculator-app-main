@@ -182,6 +182,7 @@ function setTheme(number) {
     document.body.classList.add(`theme-${number}`);
     localStorage.setItem('theme', number);
     themeToggle.value = number;
+    if (themeToggle.value == null) themeToggle.value = 1;
     // if (isNaN(number)) { radioBtns[0].checked = true; return }
     // radioBtns[number - 1].checked = true;
 }
