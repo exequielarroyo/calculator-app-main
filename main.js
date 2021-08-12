@@ -146,7 +146,7 @@ labels.forEach(label => {
     label.addEventListener('click', e =>{
         switch (label.innerText) {
             case '1':
-                setTheme(null);
+                setTheme("null");
                 break;
             default:
                 setTheme(label.innerText);
@@ -159,7 +159,7 @@ labels.forEach(label => {
 themeToggle.addEventListener('input', e => {
     switch (themeToggle.value) {
         case '1':
-            setTheme(null);
+            setTheme("null");
             break;
         default:
             setTheme(themeToggle.value);
